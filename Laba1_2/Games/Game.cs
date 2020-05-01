@@ -8,7 +8,6 @@ namespace Lab1_2.Logic.Games
 {
     public abstract class Game
     {
-        //реалізація класу... 
         private SystemRequirements _requirements;
         private bool _isRunning;
         private bool _isAuthenticated;
@@ -30,11 +29,6 @@ namespace Lab1_2.Logic.Games
                     throw new ArgumentException($"rating {value} is not valid");
                 _rating = value;
             }
-        }
-
-        public void Load(Hardware hardware)
-        {
-
         }
 
         public SystemRequirements Requirements
@@ -103,7 +97,6 @@ namespace Lab1_2.Logic.Games
             OnStopped(new GameStoppedEventArgs { CurrentSave = _currentSave, TimePlayed = timePlayed, TotalTime = Saves[_currentSave] });
         }
         
-        //події та їх викликачі
         public event EventHandler<AuthenticationEventArgs> Authentication;
 
         protected virtual void OnAuthentication(AuthenticationEventArgs e)
